@@ -21,6 +21,8 @@
 #import <AudioToolbox/AudioServices.h>
 #import "LinphoneAppDelegate.h"
 #import "PhoneMainView.h"
+//#import "linphone-Swift.h"
+
 
 static RootViewManager *rootViewManagerInstance = nil;
 
@@ -476,22 +478,23 @@ static RootViewManager *rootViewManagerInstance = nil;
 	@try {
 		LinphoneManager *lm = LinphoneManager.instance;
 		if (linphone_core_get_global_state(LC) != LinphoneGlobalOn) {
-			[self changeCurrentView:DialerView.compositeViewDescription];
+			//[self changeCurrentView:DialerView.compositeViewDescription];
 		} else if ([LinphoneManager.instance lpConfigBoolForKey:@"enable_first_login_view_preference"] == true) {
-			[PhoneMainView.instance changeCurrentView:FirstLoginView.compositeViewDescription];
+			//[PhoneMainView.instance changeCurrentView:FirstLoginView.compositeViewDescription];
 		} else {
 			// always start to dialer when testing
 			// Change to default view
 			const MSList *list = linphone_core_get_proxy_config_list(LC);
 			if (list != NULL || ([lm lpConfigBoolForKey:@"hide_assistant_preference"] == true) || lm.isTesting) {
-				[self changeCurrentView:DialerView.compositeViewDescription];
+				//[self changeCurrentView:DialerView.compositeViewDescription];
 			} else {
 				AssistantView *view = VIEW(AssistantView);
 				[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+              //  [PhoneMainView.instance presentViewController:(nonnull UIViewController *) animated:<#(BOOL)#> completion:<#^(void)completion#>
 				[view reset];
 			}
 		}
-		[self updateApplicationBadgeNumber]; // Update Badge at startup
+		//[self updateApplicationBadgeNumber]; // Update Badge at startup
 	} @catch (NSException *exception) {
 		// we'll wait until the app transitions correctly
 	}

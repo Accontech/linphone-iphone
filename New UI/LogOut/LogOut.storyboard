@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Log OutVC-->
+        <scene sceneID="vm7-ib-XnU">
+            <objects>
+                <viewController storyboardIdentifier="LogOutVC" id="5cG-Kl-Q6W" customClass="LogOutVC" customModule="Peeredge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="reA-fs-sEl"/>
+                        <viewControllerLayoutGuide type="bottom" id="FIi-ho-FjJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3HX-N2-czR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKC-rm-2ca">
+                                <rect key="frame" x="50" y="302" width="129" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="AWT-cc-zhU"/>
+                                    <constraint firstAttribute="width" constant="129" id="IKo-JK-VZ7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" red="0.20392156862745098" green="0.22352941176470587" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vJu-qT-UUO">
+                                <rect key="frame" x="46" y="368" width="275" height="136"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="mex-6y-itc"/>
+                                    <constraint firstAttribute="width" constant="275" id="qbO-8i-VG5"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">You are now able to send and receive voice calls from the standard dialpad. You may exit this app and it will continue to run in the background.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.58823529411764708" green="0.63137254901960782" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="15" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrO-10-hHj">
+                                <rect key="frame" x="50" y="594" width="68" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4w5-NH-DVR"/>
+                                    <constraint firstAttribute="width" constant="68" id="l7U-d7-TqN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutAction:" destination="5cG-Kl-Q6W" eventType="touchUpInside" id="OG6-iP-YLj"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutGroupImgs" translatesAutoresizingMaskIntoConstraints="NO" id="o2j-Rj-xBm">
+                                <rect key="frame" x="50" y="85" width="151" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="iU9-1y-jSE"/>
+                                    <constraint firstAttribute="height" constant="74" id="wJB-67-KxD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o2j-Rj-xBm" firstAttribute="top" secondItem="reA-fs-sEl" secondAttribute="bottom" constant="65" id="1ZV-iC-9NQ"/>
+                            <constraint firstItem="vJu-qT-UUO" firstAttribute="leading" secondItem="3HX-N2-czR" secondAttribute="leadingMargin" constant="30" id="R6l-8V-7lm"/>
+                            <constraint firstItem="vJu-qT-UUO" firstAttribute="top" secondItem="eKC-rm-2ca" secondAttribute="bottom" constant="40" id="SMy-pp-QFW"/>
+                            <constraint firstItem="eKC-rm-2ca" firstAttribute="top" secondItem="o2j-Rj-xBm" secondAttribute="bottom" constant="143" id="Tkx-wN-UXc"/>
+                            <constraint firstItem="o2j-Rj-xBm" firstAttribute="leading" secondItem="3HX-N2-czR" secondAttribute="leadingMargin" constant="34" id="iC7-9q-fqh"/>
+                            <constraint firstItem="eKC-rm-2ca" firstAttribute="leading" secondItem="3HX-N2-czR" secondAttribute="leadingMargin" constant="34" id="kIc-0X-81R"/>
+                            <constraint firstItem="ZrO-10-hHj" firstAttribute="top" secondItem="vJu-qT-UUO" secondAttribute="bottom" constant="90" id="kM4-1A-3cs"/>
+                            <constraint firstItem="ZrO-10-hHj" firstAttribute="leading" secondItem="3HX-N2-czR" secondAttribute="leadingMargin" constant="34" id="vqc-nG-8gk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3NP-ff-opC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="150.67466266866569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoutGroupImgs" width="151" height="74"/>
+    </resources>
+</document>

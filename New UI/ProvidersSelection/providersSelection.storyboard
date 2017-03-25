@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Providers SelectionVC-->
+        <scene sceneID="YeD-88-Jp7">
+            <objects>
+                <viewController id="ShF-2L-SQd" customClass="ProvidersSelectionVC" customModule="linphone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qoX-kz-uRu"/>
+                        <viewControllerLayoutGuide type="bottom" id="NAR-cA-dFT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="erW-bv-Wpv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inAppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Syh-a7-zT6">
+                                <rect key="frame" x="50" y="94" width="61" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="CfV-nS-lu5"/>
+                                    <constraint firstAttribute="height" constant="65" id="P4P-8r-VKR"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Welcome to your  communicator" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6M2-XR-Yii">
+                                <rect key="frame" x="50" y="197" width="202" height="72"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="3Yh-NA-M1p"/>
+                                    <constraint firstAttribute="height" constant="72" id="UuL-h9-WXh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A PROVIDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sG4-EU-HNX">
+                                <rect key="frame" x="50" y="292" width="155" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="Awq-kK-wLq"/>
+                                    <constraint firstAttribute="height" constant="21" id="Vjk-17-U5n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.12941176470588234" green="0.14117647058823529" blue="0.15686274509803921" alpha="0.25311783256880732" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7h-5L-BEP">
+                                <rect key="frame" x="275" y="573" width="64" height="64"/>
+                                <color key="backgroundColor" red="0.81568627450980391" green="0.82745098039215681" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Qsd-XG-WfW"/>
+                                    <constraint firstAttribute="height" constant="64" id="xfY-Av-eNE"/>
+                                </constraints>
+                                <state key="normal" image="next"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="ShF-2L-SQd" eventType="touchUpInside" id="4ot-b8-CeX"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="veF-kV-BIb">
+                                <rect key="frame" x="33" y="330" width="236" height="228"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="Y70-ZM-tUV"/>
+                                    <constraint firstAttribute="width" constant="236" id="sYa-el-cjb"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="iys-VU-tZZ">
+                                        <rect key="frame" x="0.0" y="28" width="236" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iys-VU-tZZ" id="XVk-JO-D30">
+                                            <rect key="frame" x="0.0" y="0.0" width="236" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="q7h-5L-BEP" secondAttribute="trailing" constant="20" id="4bb-1I-ffa"/>
+                            <constraint firstItem="sG4-EU-HNX" firstAttribute="leading" secondItem="erW-bv-Wpv" secondAttribute="leadingMargin" constant="34" id="5rg-Pa-ev1"/>
+                            <constraint firstItem="veF-kV-BIb" firstAttribute="top" secondItem="sG4-EU-HNX" secondAttribute="bottom" constant="17" id="6TE-j1-6HJ"/>
+                            <constraint firstItem="6M2-XR-Yii" firstAttribute="top" secondItem="Syh-a7-zT6" secondAttribute="bottom" constant="38" id="X93-cw-FX9"/>
+                            <constraint firstItem="sG4-EU-HNX" firstAttribute="top" secondItem="6M2-XR-Yii" secondAttribute="bottom" constant="23" id="hLa-Rb-GRa"/>
+                            <constraint firstItem="Syh-a7-zT6" firstAttribute="top" secondItem="qoX-kz-uRu" secondAttribute="bottom" constant="30" id="hoM-za-Ud5"/>
+                            <constraint firstItem="Syh-a7-zT6" firstAttribute="leading" secondItem="erW-bv-Wpv" secondAttribute="leadingMargin" constant="34" id="jpA-QC-1Cv"/>
+                            <constraint firstItem="NAR-cA-dFT" firstAttribute="top" secondItem="q7h-5L-BEP" secondAttribute="bottom" constant="30" id="loq-Us-Zvk"/>
+                            <constraint firstItem="veF-kV-BIb" firstAttribute="leading" secondItem="erW-bv-Wpv" secondAttribute="leadingMargin" constant="17" id="peb-RM-bjg"/>
+                            <constraint firstItem="6M2-XR-Yii" firstAttribute="leading" secondItem="erW-bv-Wpv" secondAttribute="leadingMargin" constant="34" id="qLi-9B-uvi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="D8l-JY-SHw"/>
+                    <connections>
+                        <outlet property="nextButton" destination="q7h-5L-BEP" id="mnO-By-a5I"/>
+                        <outlet property="tableView" destination="veF-kV-BIb" id="8qo-JD-NWL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jE-qL-v23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508" y="-167.76611694152925"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="inAppLogo" width="61" height="65"/>
+        <image name="next" width="17" height="15"/>
+    </resources>
+</document>

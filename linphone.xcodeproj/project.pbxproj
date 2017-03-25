@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045CAD361E86AAB80085C2BE /* providersSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CAD331E86AAB80085C2BE /* providersSelection.storyboard */; };
+		045CAD371E86AAB80085C2BE /* ProvidersSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CAD341E86AAB80085C2BE /* ProvidersSelectionVC.swift */; };
+		045CAD381E86AAB80085C2BE /* providersSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CAD351E86AAB80085C2BE /* providersSelection.storyboard */; };
+		045CAD3C1E86AB070085C2BE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CAD3A1E86AB070085C2BE /* Login.storyboard */; };
+		045CAD3D1E86AB070085C2BE /* LoginTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CAD3B1E86AB070085C2BE /* LoginTV.swift */; };
+		045CAD411E86AB0B0085C2BE /* LogOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CAD3F1E86AB0B0085C2BE /* LogOut.storyboard */; };
+		045CAD421E86AB0B0085C2BE /* LogOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CAD401E86AB0B0085C2BE /* LogOutVC.swift */; };
 		152F22361B15E889008C0621 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F22351B15E889008C0621 /* libxml2.dylib */; };
 		15F728741B16FF9A00A1C901 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 152F22351B15E889008C0621 /* libxml2.dylib */; };
 		1D3623260D0F684500981E51 /* LinphoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* LinphoneAppDelegate.m */; };
@@ -868,6 +875,14 @@
 
 /* Begin PBXFileReference section */
 		045B5CB218D72E9A0088350C /* libbzrtp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbzrtp.a; path = "liblinphone-sdk/apple-darwin/lib/libbzrtp.a"; sourceTree = "<group>"; };
+		045CAD321E86AAB80085C2BE /* linphone-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "linphone-Bridging-Header.h"; sourceTree = "<group>"; };
+		045CAD331E86AAB80085C2BE /* providersSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = providersSelection.storyboard; sourceTree = "<group>"; };
+		045CAD341E86AAB80085C2BE /* ProvidersSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvidersSelectionVC.swift; sourceTree = "<group>"; };
+		045CAD351E86AAB80085C2BE /* providersSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = providersSelection.storyboard; sourceTree = "<group>"; };
+		045CAD3A1E86AB070085C2BE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		045CAD3B1E86AB070085C2BE /* LoginTV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTV.swift; sourceTree = "<group>"; };
+		045CAD3F1E86AB0B0085C2BE /* LogOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LogOut.storyboard; sourceTree = "<group>"; };
+		045CAD401E86AB0B0085C2BE /* LogOutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutVC.swift; sourceTree = "<group>"; };
 		152F22351B15E889008C0621 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		1560821E18EEF26100765332 /* libmsopenh264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmsopenh264.a; path = "liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins/libmsopenh264.a"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1999,6 +2014,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045CAD301E86AAB80085C2BE /* New UI */ = {
+			isa = PBXGroup;
+			children = (
+				045CAD3E1E86AB0B0085C2BE /* LogOut */,
+				045CAD391E86AB070085C2BE /* Login */,
+				045CAD311E86AAB80085C2BE /* ProvidersSelection */,
+				045CAD351E86AAB80085C2BE /* providersSelection.storyboard */,
+			);
+			path = "New UI";
+			sourceTree = "<group>";
+		};
+		045CAD311E86AAB80085C2BE /* ProvidersSelection */ = {
+			isa = PBXGroup;
+			children = (
+				045CAD321E86AAB80085C2BE /* linphone-Bridging-Header.h */,
+				045CAD331E86AAB80085C2BE /* providersSelection.storyboard */,
+				045CAD341E86AAB80085C2BE /* ProvidersSelectionVC.swift */,
+			);
+			path = ProvidersSelection;
+			sourceTree = "<group>";
+		};
+		045CAD391E86AB070085C2BE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				045CAD3A1E86AB070085C2BE /* Login.storyboard */,
+				045CAD3B1E86AB070085C2BE /* LoginTV.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		045CAD3E1E86AB0B0085C2BE /* LogOut */ = {
+			isa = PBXGroup;
+			children = (
+				045CAD3F1E86AB0B0085C2BE /* LogOut.storyboard */,
+				045CAD401E86AB0B0085C2BE /* LogOutVC.swift */,
+			);
+			path = LogOut;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -2229,6 +2283,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				045CAD301E86AAB80085C2BE /* New UI */,
 				8C23BCB71D82AAC3005F19BB /* linphone.entitlements */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -3332,6 +3387,7 @@
 				633FEE6E1D3CD5590014B822 /* footer_history_default.png in Resources */,
 				633FEEB21D3CD55A0014B822 /* numpad_2~ipad@2x.png in Resources */,
 				633FEDC61D3CD5590014B822 /* call_incoming.png in Resources */,
+				045CAD381E86AAB80085C2BE /* providersSelection.storyboard in Resources */,
 				633FEF2D1D3CD55A0014B822 /* route_earpiece_selected@2x.png in Resources */,
 				638F1A621C2021B2004B8E02 /* DialerView~ipad.xib in Resources */,
 				633FEEFF1D3CD55A0014B822 /* options_add_call_disabled@2x.png in Resources */,
@@ -3695,6 +3751,7 @@
 				633FEF1E1D3CD55A0014B822 /* presence_online.png in Resources */,
 				633FEDF41D3CD5590014B822 /* call_video_start_disabled.png in Resources */,
 				633FEDD31D3CD5590014B822 /* call_quality_indicator_3@2x.png in Resources */,
+				045CAD411E86AB0B0085C2BE /* LogOut.storyboard in Resources */,
 				633FEE3A1D3CD5590014B822 /* contact_add_disabled.png in Resources */,
 				633FEEA11D3CD55A0014B822 /* numpad_0~ipad.png in Resources */,
 				633FEE751D3CD5590014B822 /* history_all_disabled@2x.png in Resources */,
@@ -3704,6 +3761,7 @@
 				633FEE851D3CD5590014B822 /* led_error@2x.png in Resources */,
 				633FEDBE1D3CD5590014B822 /* call_back_default.png in Resources */,
 				633FEF0F1D3CD55A0014B822 /* pause_big_default@2x.png in Resources */,
+				045CAD361E86AAB80085C2BE /* providersSelection.storyboard in Resources */,
 				633FEF081D3CD55A0014B822 /* options_start_conference_disabled.png in Resources */,
 				63F1DF511BCE986A00EDED90 /* UICallConferenceCell.xib in Resources */,
 				633FEE301D3CD5590014B822 /* color_H.png in Resources */,
@@ -3782,6 +3840,7 @@
 				633FEE661D3CD5590014B822 /* footer_contacts_default.png in Resources */,
 				633FEDC11D3CD5590014B822 /* call_back_disabled@2x.png in Resources */,
 				633FEEEE1D3CD55A0014B822 /* numpad_hash_over@2x.png in Resources */,
+				045CAD3C1E86AB070085C2BE /* Login.storyboard in Resources */,
 				633FEDD01D3CD5590014B822 /* call_quality_indicator_2.png in Resources */,
 				633FEE551D3CD5590014B822 /* dialer_back_default@2x.png in Resources */,
 				633FEF361D3CD55A0014B822 /* routes_disabled.png in Resources */,
@@ -3963,6 +4022,7 @@
 				D37DC6C11594AE1800B2A5EB /* LinphoneCoreSettingsStore.m in Sources */,
 				63CD4B4F1A5AAC8C00B84282 /* DTAlertView.m in Sources */,
 				D3EA53FD159850E80037DC6B /* LinphoneManager.m in Sources */,
+				045CAD3D1E86AB070085C2BE /* LoginTV.swift in Sources */,
 				63B81A0E1B57DA33009604A6 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				633888451BFB2C49001D5E7B /* HPGrowingTextView.m in Sources */,
 				63F1DF441BCE618E00EDED90 /* UIAddressTextField.m in Sources */,
@@ -3971,6 +4031,7 @@
 				D3F26BF115986B73005F9CAB /* CallIncomingView.m in Sources */,
 				D31B4B21159876C0002E6C72 /* UICompositeView.m in Sources */,
 				D31AAF5E159B3919002C6B02 /* CallPausedTableView.m in Sources */,
+				045CAD421E86AB0B0085C2BE /* LogOutVC.swift in Sources */,
 				631098491D4660580041F2B3 /* CountryListView.m in Sources */,
 				D32B9DFC15A2F131000B6DEC /* FastAddressBook.m in Sources */,
 				D350F20E15A43BB100149E54 /* AssistantView.m in Sources */,
@@ -4008,6 +4069,7 @@
 				D3807FF815C2894A005BE9BC /* IASKPSSliderSpecifierViewCell.m in Sources */,
 				D3807FFA15C2894A005BE9BC /* IASKPSTextFieldSpecifierViewCell.m in Sources */,
 				D3807FFC15C2894A005BE9BC /* IASKPSTitleValueSpecifierViewCell.m in Sources */,
+				045CAD371E86AAB80085C2BE /* ProvidersSelectionVC.swift in Sources */,
 				D3807FFE15C2894A005BE9BC /* IASKSlider.m in Sources */,
 				D380800015C2894A005BE9BC /* IASKSwitch.m in Sources */,
 				D380800215C2894A005BE9BC /* IASKTextField.m in Sources */,
@@ -4542,7 +4604,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4569,6 +4630,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib",
@@ -4583,7 +4645,7 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -4635,7 +4697,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4661,6 +4722,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4675,7 +4737,7 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -4727,7 +4789,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4753,6 +4814,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4767,7 +4829,7 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -4819,7 +4881,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4845,6 +4906,7 @@
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4859,7 +4921,7 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -5315,6 +5377,7 @@
 		F0F952081A6AEB1000254160 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -5367,6 +5430,7 @@
 		F0F952091A6AEB1000254160 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -5413,6 +5477,7 @@
 		F0F9520A1A6AEB1000254160 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -5459,6 +5524,7 @@
 		F0F9520B1A6AEB1000254160 /* DistributionAdhoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
