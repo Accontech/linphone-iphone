@@ -351,7 +351,7 @@ static RootViewManager *rootViewManagerInstance = nil;
 		case LinphoneCallStreamsRunning: {
             CallView *view = VIEW(CallView);
             
-            [currentController presentViewController:view animated:false completion:^{
+            [self.currentController presentViewController:view animated:false completion:^{
                 
             }];
 //			[self changeCurrentView:CallView.compositeViewDescription];
@@ -395,7 +395,7 @@ static RootViewManager *rootViewManagerInstance = nil;
 //					   (currentView == CallOutgoingView.compositeViewDescription)) {
 //					[self popCurrentView];
 //				}
-                [currentController dismissViewControllerAnimated:true completion:^{
+                [self.currentController dismissViewControllerAnimated:true completion:^{
                     
                 }];
 			} else {
@@ -498,7 +498,7 @@ static RootViewManager *rootViewManagerInstance = nil;
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LogOut" bundle:nil];
                 LogOutVC *logOutVC = (LogOutVC*)storyboard.instantiateInitialViewController;
                 [PhoneMainView.instance presentViewController:logOutVC animated:true completion:^{}];
-                currentController = logOutVC;
+                self.currentController = logOutVC;
 			} else {
 //				AssistantView *view = VIEW(AssistantView);
 //				[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
@@ -509,7 +509,7 @@ static RootViewManager *rootViewManagerInstance = nil;
                 UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:providersSelectionVC];
                 navCtrl.navigationBarHidden = true;
                 [PhoneMainView.instance presentViewController:navCtrl animated:true completion:^{}];
-                currentController = navCtrl;
+                self.currentController = navCtrl;
             }
 		}
 		//[self updateApplicationBadgeNumber]; // Update Badge at startup

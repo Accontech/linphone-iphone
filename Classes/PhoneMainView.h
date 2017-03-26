@@ -73,7 +73,6 @@
 @interface PhoneMainView : UIViewController<IncomingCallViewDelegate> {
     @private
     NSMutableArray *inhibitedEvents;
-    UIViewController *currentController;
 }
 
 @property(nonatomic, strong) IBOutlet UIView *statusBarBG;
@@ -84,6 +83,7 @@
 @property(weak, readonly) UICompositeViewDescription *currentView;
 @property LinphoneChatRoom* currentRoom;
 @property(readonly, strong) MPVolumeView *volumeView;
+@property(nonatomic) UIViewController *currentController;
 
 - (void)changeCurrentView:(UICompositeViewDescription *)view;
 - (UIViewController*)popCurrentView;
