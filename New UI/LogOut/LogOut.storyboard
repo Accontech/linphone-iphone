@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5cG-Kl-Q6W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--Log OutVC-->
         <scene sceneID="vm7-ib-XnU">
             <objects>
-                <viewController storyboardIdentifier="LogOutVC" id="5cG-Kl-Q6W" customClass="LogOutVC" customModule="Peeredge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogOutVC" id="5cG-Kl-Q6W" customClass="LogOutVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="reA-fs-sEl"/>
                         <viewControllerLayoutGuide type="bottom" id="FIi-ho-FjJ"/>
@@ -59,7 +60,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
-                                    <action selector="logOutAction:" destination="5cG-Kl-Q6W" eventType="touchUpInside" id="OG6-iP-YLj"/>
+                                    <action selector="onButtonLogOut:" destination="5cG-Kl-Q6W" eventType="touchUpInside" id="L2M-vz-Lef"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutGroupImgs" translatesAutoresizingMaskIntoConstraints="NO" id="o2j-Rj-xBm">

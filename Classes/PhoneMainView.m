@@ -21,7 +21,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import "LinphoneAppDelegate.h"
 #import "PhoneMainView.h"
-//#import "linphone-Swift.h"
+#import "ProvidersSelectionVC.h"
 
 
 static RootViewManager *rootViewManagerInstance = nil;
@@ -488,11 +488,16 @@ static RootViewManager *rootViewManagerInstance = nil;
 			if (list != NULL || ([lm lpConfigBoolForKey:@"hide_assistant_preference"] == true) || lm.isTesting) {
 				//[self changeCurrentView:DialerView.compositeViewDescription];
 			} else {
-				AssistantView *view = VIEW(AssistantView);
-				[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
-              //  [PhoneMainView.instance presentViewController:(nonnull UIViewController *) animated:<#(BOOL)#> completion:<#^(void)completion#>
-				[view reset];
-			}
+//				AssistantView *view = VIEW(AssistantView);
+//				[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+//				[view reset];
+
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ProviderSelection" bundle:nil];
+                ProvidersSelectionVC *providersSelectionVC = (ProvidersSelectionVC*)[storyboard instantiateInitialViewController];
+                UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:providersSelectionVC];
+                navCtrl.navigationBarHidden = true;
+                [PhoneMainView.instance presentViewController:navCtrl animated:true completion:^{}];
+            }
 		}
 		//[self updateApplicationBadgeNumber]; // Update Badge at startup
 	} @catch (NSException *exception) {
