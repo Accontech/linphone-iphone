@@ -73,6 +73,7 @@
 @interface PhoneMainView : UIViewController<IncomingCallViewDelegate> {
     @private
     NSMutableArray *inhibitedEvents;
+    UIViewController *currentController;
 }
 
 @property(nonatomic, strong) IBOutlet UIView *statusBarBG;

@@ -22,6 +22,7 @@
 #import "LinphoneAppDelegate.h"
 #import "PhoneMainView.h"
 #import "ProvidersSelectionVC.h"
+#import "LogOutVC.h"
 
 
 static RootViewManager *rootViewManagerInstance = nil;
@@ -201,7 +202,7 @@ static RootViewManager *rootViewManagerInstance = nil;
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	[NSNotificationCenter.defaultCenter removeObserver:self];
+//	[NSNotificationCenter.defaultCenter removeObserver:self];
 	[[UIDevice currentDevice] setBatteryMonitoringEnabled:NO];
 }
 
@@ -325,8 +326,7 @@ static RootViewManager *rootViewManagerInstance = nil;
 	switch (state) {
 		case LinphoneCallIncomingReceived:
 		case LinphoneCallIncomingEarlyMedia: {
-			if (linphone_core_get_calls_nb(LC) > 1 ||
-				(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max)) {
+			if (linphone_core_get_calls_nb(LC) > 1 || (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max)) {
 				[self displayIncomingCall:call];
 			}
 			break;
@@ -349,7 +349,12 @@ static RootViewManager *rootViewManagerInstance = nil;
 			break;
 		}
 		case LinphoneCallStreamsRunning: {
-			[self changeCurrentView:CallView.compositeViewDescription];
+            CallView *view = VIEW(CallView);
+            
+            [currentController presentViewController:view animated:false completion:^{
+                
+            }];
+//			[self changeCurrentView:CallView.compositeViewDescription];
 			if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max && call) {
 				NSString *callId =
 					[NSString stringWithUTF8String:linphone_call_log_get_call_id(linphone_call_get_call_log(call))];
@@ -385,11 +390,14 @@ static RootViewManager *rootViewManagerInstance = nil;
 		case LinphoneCallEnd: {
 			const MSList *calls = linphone_core_get_calls(LC);
 			if (calls == NULL) {
-				while ((currentView == CallView.compositeViewDescription) ||
-					   (currentView == CallIncomingView.compositeViewDescription) ||
-					   (currentView == CallOutgoingView.compositeViewDescription)) {
-					[self popCurrentView];
-				}
+//				while ((currentView == CallView.compositeViewDescription) ||
+//					   (currentView == CallIncomingView.compositeViewDescription) ||
+//					   (currentView == CallOutgoingView.compositeViewDescription)) {
+//					[self popCurrentView];
+//				}
+                [currentController dismissViewControllerAnimated:true completion:^{
+                    
+                }];
 			} else {
 				linphone_call_resume((LinphoneCall *)calls->data);
 				[self changeCurrentView:CallView.compositeViewDescription];
@@ -487,6 +495,10 @@ static RootViewManager *rootViewManagerInstance = nil;
 			const MSList *list = linphone_core_get_proxy_config_list(LC);
 			if (list != NULL || ([lm lpConfigBoolForKey:@"hide_assistant_preference"] == true) || lm.isTesting) {
 				//[self changeCurrentView:DialerView.compositeViewDescription];
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LogOut" bundle:nil];
+                LogOutVC *logOutVC = (LogOutVC*)storyboard.instantiateInitialViewController;
+                [PhoneMainView.instance presentViewController:logOutVC animated:true completion:^{}];
+                currentController = logOutVC;
 			} else {
 //				AssistantView *view = VIEW(AssistantView);
 //				[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
@@ -497,6 +509,7 @@ static RootViewManager *rootViewManagerInstance = nil;
                 UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:providersSelectionVC];
                 navCtrl.navigationBarHidden = true;
                 [PhoneMainView.instance presentViewController:navCtrl animated:true completion:^{}];
+                currentController = navCtrl;
             }
 		}
 		//[self updateApplicationBadgeNumber]; // Update Badge at startup

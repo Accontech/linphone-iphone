@@ -36,8 +36,8 @@
 
     [self setupUI];
     
-    self.emailTextField.text = @"amprogx2";
-    self.passwordTextField.text = @"123456";
+    self.emailTextField.text = @"112";
+    self.passwordTextField.text = @"abcd12";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kLinphoneRegistrationUpdate object:nil];
 }
@@ -103,10 +103,10 @@
         linphone_core_clear_all_auth_info([LinphoneManager getLc]);
         linphone_core_clear_proxy_config([LinphoneManager getLc]);
         LinphoneProxyConfig *proxyCfg = linphone_core_create_proxy_config([LinphoneManager getLc]);
-        linphone_proxy_config_set_server_addr(proxyCfg, "sip2sip.info:5060");
+        linphone_proxy_config_set_server_addr(proxyCfg, "192.168.0.50:5060");
 
         /*default domain is supposed to be preset from linphonerc*/
-        NSString *identity = [NSString stringWithFormat:@"sip:%@@%@", self.emailTextField.text, @"sip2sip.info:5060"];
+        NSString *identity = [NSString stringWithFormat:@"sip:%@@%@", self.emailTextField.text, @"192.168.0.50:5060"];
         linphone_proxy_config_set_identity(proxyCfg, [identity UTF8String]);
         LinphoneAuthInfo *auth_info = linphone_auth_info_new([self.emailTextField.text UTF8String], [self.emailTextField.text UTF8String], [self.passwordTextField.text UTF8String], NULL, NULL, linphone_proxy_config_get_domain(proxyCfg));
         linphone_core_add_auth_info([LinphoneManager getLc], auth_info);
