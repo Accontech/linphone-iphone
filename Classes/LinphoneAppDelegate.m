@@ -31,6 +31,7 @@
 
 #include "LinphoneManager.h"
 #include "linphone/linphonecore.h"
+#include <Intents/Intents.h>
 
 @implementation LinphoneAppDelegate
 
@@ -132,6 +133,31 @@
 		}
 	}
 	[LinphoneManager.instance.iapManager check];
+}
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+//    NSString *handle = userActivity.startCallHandle;
+//    
+//    if (handle && [handle isKindOfClass:[NSString class]] && handle.length) {
+//        LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:handle];
+//        [LinphoneManager.instance call:addr];
+//    }
+
+    
+    INInteraction *interaction = userActivity.interaction;
+    INStartAudioCallIntent *startAudioCallIntent = (INStartAudioCallIntent *)interaction.intent;
+    INPerson *contact = startAudioCallIntent.contacts[0];
+    INPersonHandle *personHandle = contact.personHandle;
+    NSString *phoneNumber = personHandle.value;
+    phoneNumber = [phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
+    phoneNumber = [phoneNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    phoneNumber = [phoneNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    phoneNumber = [phoneNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
+    phoneNumber = [phoneNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    LinphoneAddress *addr = [LinphoneUtils normalizeSipOrPhoneAddress:phoneNumber];
+    [LinphoneManager.instance call:addr];
+    
+    return true;
 }
 
 #pragma deploymate push "ignored-api-availability"

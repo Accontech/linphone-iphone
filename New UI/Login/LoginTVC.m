@@ -9,13 +9,14 @@
 #import "LoginTVC.h"
 #import "LogOutVC.h"
 #import "PhoneMainView.h"
+#import "AsyncImageView.h"
 
 @interface LoginTVC () <UITextFieldDelegate> {
     int nexTag;
 }
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *providerImageView;
+@property (weak, nonatomic) IBOutlet AsyncImageView *providerImageView;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *saveCredentialsSwitch;
@@ -34,11 +35,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     nexTag = 0;
-
+    [self.providerImageView setShowActivityIndicator:true];
+    self.providerImageView.imageURL = [NSURL URLWithString:self.provider.logo];
+    
     [self setupUI];
     
-    self.emailTextField.text = @"111";
-    self.passwordTextField.text = @"abcd12";
+    self.emailTextField.text = @"7001";
+    self.passwordTextField.text = @"46Labs1234";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kLinphoneRegistrationUpdate object:nil];
 }
@@ -104,10 +107,20 @@
         linphone_core_clear_all_auth_info([LinphoneManager getLc]);
         linphone_core_clear_proxy_config([LinphoneManager getLc]);
         LinphoneProxyConfig *proxyCfg = linphone_core_create_proxy_config([LinphoneManager getLc]);
-        linphone_proxy_config_set_server_addr(proxyCfg, "192.168.0.50:5060");
+        linphone_proxy_config_set_server_addr(proxyCfg, [self.provider.sipServer UTF8String]);
+        
+        LCSipTransports transportValue = {[self.provider.protocol isEqualToString:@"udp"] ? self.provider.port : -1,
+                                          [self.provider.protocol isEqualToString:@"tcp"] ? self.provider.port : -1,
+                                          [self.provider.protocol isEqualToString:@"dtls"] ? self.provider.port : -1,
+                                          [self.provider.protocol isEqualToString:@"tls"] ? self.provider.port : -1};
+        
+        // will also update the sip_*_port section of the config
+        if (linphone_core_set_sip_transports([LinphoneManager getLc], &transportValue)) {
+            LOGE(@"cannot set transport");
+        }
         
         /*default domain is supposed to be preset from linphonerc*/
-        NSString *identity = [NSString stringWithFormat:@"sip:%@@%@", self.emailTextField.text, @"192.168.0.50:5060"];
+        NSString *identity = [NSString stringWithFormat:@"sip:%@@%@", self.emailTextField.text, self.provider.sipServer];
         linphone_proxy_config_set_identity(proxyCfg, [identity UTF8String]);
         LinphoneAuthInfo *auth_info = linphone_auth_info_new([self.emailTextField.text UTF8String], [self.emailTextField.text UTF8String], [self.passwordTextField.text UTF8String], NULL, NULL, linphone_proxy_config_get_domain(proxyCfg));
         linphone_core_add_auth_info([LinphoneManager getLc], auth_info);

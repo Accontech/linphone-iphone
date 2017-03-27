@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Provider.h"
 
 @interface LoginTVC : UITableViewController
 
-@property (nonatomic, retain) NSString *providerName;
+@property (nonatomic, retain) Provider *provider;
 
 @end

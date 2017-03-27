@@ -29,26 +29,14 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
+			<string>Editor</string>
 			<key>CFBundleURLIconFile</key>
-			<string>linphone_icon_72@2x</string>
+			<string>avatar</string>
 			<key>CFBundleURLName</key>
-			<string>org.linphone.phone</string>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).url-scheme.dial</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>sip</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>CFBundleURLIconFile</key>
-			<string>linphone_icon_72@2x</string>
-			<key>CFBundleURLName</key>
-			<string>org.linphone.phone</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>linphone-config</string>
+				<string>Peer</string>
 			</array>
 		</dict>
 	</array>
@@ -70,6 +58,10 @@
 	<string>Use microphone to make audio calls</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Share photos with your friends and customize avatars</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>INStartAudioCallIntent</string>
+	</array>
 	<key>NSVoIPUsageDescription</key>
 	<string>Make audio/video calls</string>
 	<key>UIApplicationExitsOnSuspend</key>

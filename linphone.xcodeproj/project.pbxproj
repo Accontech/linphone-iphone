@@ -674,6 +674,12 @@
 		63FD3F101CA17FA400E9AECC /* libmbedcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FD3F061CA17F9100E9AECC /* libmbedcrypto.a */; };
 		63FD3F111CA17FA400E9AECC /* libmbedtls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FD3F071CA17F9100E9AECC /* libmbedtls.a */; };
 		63FD3F121CA17FA400E9AECC /* libmbedx509.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FD3F081CA17F9100E9AECC /* libmbedx509.a */; };
+		69012EF91E882F20006EDC26 /* linphone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69012EF81E882F20006EDC26 /* linphone-Info.plist */; };
+		690904D51E895D2C009DD548 /* Provider.m in Sources */ = {isa = PBXBuildFile; fileRef = 690904D41E895D2C009DD548 /* Provider.m */; };
+		690904D81E895D9F009DD548 /* Codec.m in Sources */ = {isa = PBXBuildFile; fileRef = 690904D71E895D9F009DD548 /* Codec.m */; };
+		690904DC1E8960A2009DD548 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 690904DB1E8960A2009DD548 /* AsyncImageView.m */; };
+		690904DD1E896169009DD548 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BB8C4A193631B300974404 /* ImageIO.framework */; };
+		690904DF1E897990009DD548 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690904DE1E897990009DD548 /* Intents.framework */; };
 		6944FD971E86AC6F004ABA67 /* LogOutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6944FD961E86AC6F004ABA67 /* LogOutVC.m */; };
 		6944FD9A1E86AD37004ABA67 /* LoginTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6944FD991E86AD37004ABA67 /* LoginTVC.m */; };
 		6944FD9D1E86B234004ABA67 /* ProvidersSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6944FD9C1E86B234004ABA67 /* ProvidersSelectionVC.m */; };
@@ -873,9 +879,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		69012EA61E882AD4006EDC26 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		045B5CB218D72E9A0088350C /* libbzrtp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbzrtp.a; path = "liblinphone-sdk/apple-darwin/lib/libbzrtp.a"; sourceTree = "<group>"; };
-		045CAD321E86AAB80085C2BE /* linphone-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "linphone-Bridging-Header.h"; path = "ProvidersSelection/linphone-Bridging-Header.h"; sourceTree = "<group>"; };
 		045CAD331E86AAB80085C2BE /* ProviderSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProviderSelection.storyboard; sourceTree = "<group>"; };
 		045CAD351E86AAB80085C2BE /* providersSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = providersSelection.storyboard; sourceTree = "<group>"; };
 		045CAD3A1E86AB070085C2BE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -1607,6 +1625,17 @@
 		63FD3F061CA17F9100E9AECC /* libmbedcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmbedcrypto.a; path = "liblinphone-sdk/apple-darwin/lib/libmbedcrypto.a"; sourceTree = "<group>"; };
 		63FD3F071CA17F9100E9AECC /* libmbedtls.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmbedtls.a; path = "liblinphone-sdk/apple-darwin/lib/libmbedtls.a"; sourceTree = "<group>"; };
 		63FD3F081CA17F9100E9AECC /* libmbedx509.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmbedx509.a; path = "liblinphone-sdk/apple-darwin/lib/libmbedx509.a"; sourceTree = "<group>"; };
+		69012E851E8828C6006EDC26 /* linphone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "linphone-Bridging-Header.h"; sourceTree = "<group>"; };
+		69012E921E882A74006EDC26 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		69012EB61E882B74006EDC26 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		69012EF81E882F20006EDC26 /* linphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "linphone-Info.plist"; sourceTree = "<group>"; };
+		690904D31E895D2C009DD548 /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
+		690904D41E895D2C009DD548 /* Provider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provider.m; sourceTree = "<group>"; };
+		690904D61E895D9F009DD548 /* Codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Codec.h; sourceTree = "<group>"; };
+		690904D71E895D9F009DD548 /* Codec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Codec.m; sourceTree = "<group>"; };
+		690904DA1E8960A2009DD548 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		690904DB1E8960A2009DD548 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		690904DE1E897990009DD548 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		6944FD951E86AC6F004ABA67 /* LogOutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutVC.h; sourceTree = "<group>"; };
 		6944FD961E86AC6F004ABA67 /* LogOutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutVC.m; sourceTree = "<group>"; };
 		6944FD981E86AD37004ABA67 /* LoginTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTVC.h; sourceTree = "<group>"; };
@@ -1865,6 +1894,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690904DF1E897990009DD548 /* Intents.framework in Frameworks */,
+				690904DD1E896169009DD548 /* ImageIO.framework in Frameworks */,
 				9EC6C1E31DF969AA006C2FD2 /* libturbojpeg.a in Frameworks */,
 				8C2595DF1DEDCC8E007A6424 /* CallKit.framework in Frameworks */,
 				8C73477C1D9BA3A00022EE8C /* UserNotifications.framework in Frameworks */,
@@ -2020,11 +2051,12 @@
 		045CAD301E86AAB80085C2BE /* New UI */ = {
 			isa = PBXGroup;
 			children = (
-				045CAD321E86AAB80085C2BE /* linphone-Bridging-Header.h */,
+				690904D91E8960A2009DD548 /* AsyncImageView */,
 				045CAD3E1E86AB0B0085C2BE /* LogOut */,
 				045CAD391E86AB070085C2BE /* Login */,
 				045CAD311E86AAB80085C2BE /* ProvidersSelection */,
 				045CAD351E86AAB80085C2BE /* providersSelection.storyboard */,
+				69012E851E8828C6006EDC26 /* linphone-Bridging-Header.h */,
 			);
 			path = "New UI";
 			sourceTree = "<group>";
@@ -2035,6 +2067,10 @@
 				045CAD331E86AAB80085C2BE /* ProviderSelection.storyboard */,
 				6944FD9B1E86B234004ABA67 /* ProvidersSelectionVC.h */,
 				6944FD9C1E86B234004ABA67 /* ProvidersSelectionVC.m */,
+				690904D31E895D2C009DD548 /* Provider.h */,
+				690904D41E895D2C009DD548 /* Provider.m */,
+				690904D61E895D9F009DD548 /* Codec.h */,
+				690904D71E895D9F009DD548 /* Codec.m */,
 			);
 			path = ProvidersSelection;
 			sourceTree = "<group>";
@@ -2309,6 +2345,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				69012EF81E882F20006EDC26 /* linphone-Info.plist */,
 				32CA4F630368D1EE00C91783 /* linphone_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -2318,6 +2355,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				690904DE1E897990009DD548 /* Intents.framework */,
+				69012E921E882A74006EDC26 /* Accelerate.framework */,
 				9EC6C1E21DF969AA006C2FD2 /* libturbojpeg.a */,
 				9EC6C1E01DF96991006C2FD2 /* armv7-apple-darwin.ios */,
 				8C2595DE1DEDCC8E007A6424 /* CallKit.framework */,
@@ -2408,6 +2447,7 @@
 				2264B6D111200342002C2C53 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				F03A9B7E18C0D9C900C4D7FE /* libcunit.a */,
+				69012EB61E882B74006EDC26 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3020,6 +3060,15 @@
 			path = ringtones;
 			sourceTree = "<group>";
 		};
+		690904D91E8960A2009DD548 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				690904DA1E8960A2009DD548 /* AsyncImageView.h */,
+				690904DB1E8960A2009DD548 /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
+			sourceTree = "<group>";
+		};
 		D326483415887D4400930C67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -3172,21 +3221,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* linphone */ = {
+		1D6058900D05DD3D006BFB54 /* Peeredge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "linphone" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Peeredge" */;
 			buildPhases = (
 				639002451D4106CA00BEFC78 /* ShellScript */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				63DCC71D1A07B08E00916627 /* Run Script */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				69012EA61E882AD4006EDC26 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = linphone;
+			name = Peeredge;
 			productName = linphone;
 			productReference = 1D6058910D05DD3D006BFB54 /* linphone.app */;
 			productType = "com.apple.product-type.application";
@@ -3255,6 +3305,7 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = BJ4EZ5BP4S;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -3311,7 +3362,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* linphone */,
+				1D6058900D05DD3D006BFB54 /* Peeredge */,
 				F0F951FF1A6AEB1000254160 /* linphoneTests */,
 				F0BB8BD41936208100974404 /* liblinphoneTester */,
 				F08F118319C09C6A007D70C2 /* liblinphoneTesterTests */,
@@ -3467,6 +3518,7 @@
 				639E9CB01C0DB83000019A75 /* SideMenuView.xib in Resources */,
 				633FEDBB1D3CD5590014B822 /* call_audio_start_default@2x.png in Resources */,
 				633FEF1A1D3CD55A0014B822 /* presence_away.png in Resources */,
+				69012EF91E882F20006EDC26 /* linphone-Info.plist in Resources */,
 				639E9CB51C0DB88200019A75 /* PhoneMainView.xib in Resources */,
 				633FEDB61D3CD5590014B822 /* call_alt_start_default.png in Resources */,
 				6352A5761BE0D4B800594C1C /* CallSideMenuView.xib in Resources */,
@@ -3971,9 +4023,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690904D81E895D9F009DD548 /* Codec.m in Sources */,
 				63B81A0F1B57DA33009604A6 /* TPKeyboardAvoidingTableView.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* LinphoneAppDelegate.m in Sources */,
+				690904D51E895D2C009DD548 /* Provider.m in Sources */,
+				690904DC1E8960A2009DD548 /* AsyncImageView.m in Sources */,
 				22F2508E107141E100AC9B3F /* DialerView.m in Sources */,
 				633756451B67D2B200E21BAD /* SideMenuView.m in Sources */,
 				22E0A822111C44E100B04932 /* AboutView.m in Sources */,
@@ -4142,7 +4197,7 @@
 		};
 		F0F952071A6AEB1000254160 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D6058900D05DD3D006BFB54 /* linphone */;
+			target = 1D6058900D05DD3D006BFB54 /* Peeredge */;
 			targetProxy = F0F952061A6AEB1000254160 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -4610,6 +4665,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4617,6 +4673,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BJ4EZ5BP4S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -4637,6 +4694,7 @@
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib",
@@ -4651,7 +4709,10 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_OBJC_BRIDGING_HEADER = "New UI/linphone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -4703,6 +4764,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4710,6 +4772,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BJ4EZ5BP4S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -4729,6 +4792,7 @@
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4743,7 +4807,9 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_OBJC_BRIDGING_HEADER = "New UI/linphone-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -4795,6 +4861,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4802,6 +4869,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BJ4EZ5BP4S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -4821,6 +4889,7 @@
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4835,7 +4904,9 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_OBJC_BRIDGING_HEADER = "New UI/linphone-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -4887,6 +4958,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				CODE_SIGN_ENTITLEMENTS = linphone.entitlements;
@@ -4894,6 +4966,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BJ4EZ5BP4S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -4913,6 +4986,7 @@
 				);
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(SRCROOT)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
@@ -4927,7 +5001,9 @@
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_OBJC_BRIDGING_HEADER = "New UI/linphone-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = (
 					"-Werror=objc-method-access",
 					"-Werror=incomplete-implementation",
@@ -5573,7 +5649,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "linphone" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Peeredge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,

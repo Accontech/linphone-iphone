@@ -8,9 +8,11 @@
 
 #import "ProvidersSelectionVC.h"
 #import "LoginTVC.h"
+#import "Provider.h"
 
 @interface ProvidersSelectionVC () <UITableViewDelegate, UITableViewDataSource> {
-    NSArray *providersList;
+    NSMutableArray *providersList;
+    Provider *selectedProvider;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
@@ -29,6 +31,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
+    selectedProvider = nil;
     [self setupUI];
     [self setupDelegateMethods];
     [self setupDataSource];
@@ -63,7 +66,34 @@
 }
 
 - (void) setupDataSource {
-    providersList = [[NSArray alloc] initWithObjects:@"Globalgig", @"Telmex", @"Brasilfone", @"BrightLink", @"TSI Corp", nil];
+    NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultConfigObject];
+    
+    //Create an URLRequest
+    NSURL *url = [NSURL URLWithString:@"https://webrtc-provisioning.46labs.com:9443/api/v1/provider/list"];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    //Create task
+    NSURLSessionDataTask *dataTask = [defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        //Handle your response here
+        
+        if ((long)((NSHTTPURLResponse*)response).statusCode == 200) {
+            NSArray *providers = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            providersList = [[NSMutableArray alloc] init];
+            
+            for (NSDictionary *dictProvider in providers) {
+                Provider *provider = [[Provider alloc] initWithNSDictionary:dictProvider];
+                [providersList addObject:provider];
+            }
+            
+            [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:true];
+        } else {
+            NSLog(@"Problem with geting users");
+        }
+    }];
+    
+    [dataTask resume];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,7 +103,7 @@
 
 - (IBAction)onButtonNext:(id)sender {
     LoginTVC *loginVC = (LoginTVC*)[UIStoryboard storyboardWithName:@"Login" bundle:nil].instantiateInitialViewController;
-    loginVC.providerName = @"Telmex";
+    loginVC.provider = selectedProvider;
     [self.navigationController pushViewController:loginVC animated:true];
 }
 
@@ -92,8 +122,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
-
-    cell.textLabel.text = providersList[indexPath.row];
+    Provider *provider = providersList[indexPath.row];
+    
+    cell.textLabel.text = provider.name;
     cell.textLabel.textColor = [UIColor blackColor];
     
     return cell;
@@ -101,6 +132,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     [tableView cellForRowAtIndexPath:indexPath].textLabel.textColor = [UIColor colorWithRed:56.0/255.0 green:197.0/255.0 blue:1.0 alpha:1.0];
+    selectedProvider = providersList[indexPath.row];
     [self enableNextButton:true];
 }
 

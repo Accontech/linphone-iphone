@@ -321,7 +321,7 @@ static RootViewManager *rootViewManagerInstance = nil;
 - (void)callUpdate:(NSNotification *)notif {
 	LinphoneCall *call = [[notif.userInfo objectForKey:@"call"] pointerValue];
 	LinphoneCallState state = [[notif.userInfo objectForKey:@"state"] intValue];
-	NSString *message = [notif.userInfo objectForKey:@"message"];
+//	NSString *message = [notif.userInfo objectForKey:@"message"];
 
 	switch (state) {
 		case LinphoneCallIncomingReceived:
@@ -332,7 +332,9 @@ static RootViewManager *rootViewManagerInstance = nil;
 			break;
 		}
 		case LinphoneCallOutgoingInit: {
-			[self changeCurrentView:CallOutgoingView.compositeViewDescription];
+            CallOutgoingView *view = VIEW(CallOutgoingView);
+            [self.currentController presentViewController:view animated:false completion:^{}];
+//			[self changeCurrentView:CallOutgoingView.compositeViewDescription];
 			break;
 		}
 		case LinphoneCallPausedByRemote:
@@ -351,9 +353,7 @@ static RootViewManager *rootViewManagerInstance = nil;
 		case LinphoneCallStreamsRunning: {
             CallView *view = VIEW(CallView);
             
-            [self.currentController presentViewController:view animated:false completion:^{
-                
-            }];
+            [self.currentController presentViewController:view animated:false completion:^{}];
 //			[self changeCurrentView:CallView.compositeViewDescription];
 			if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max && call) {
 				NSString *callId =
@@ -375,16 +375,17 @@ static RootViewManager *rootViewManagerInstance = nil;
 			break;
 		}
 		case LinphoneCallUpdatedByRemote: {
-			const LinphoneCallParams *current = linphone_call_get_current_params(call);
-			const LinphoneCallParams *remote = linphone_call_get_remote_params(call);
-
-			if (linphone_call_params_video_enabled(current) && !linphone_call_params_video_enabled(remote)) {
-				[self changeCurrentView:CallView.compositeViewDescription];
-			}
+//			const LinphoneCallParams *current = linphone_call_get_current_params(call);
+//			const LinphoneCallParams *remote = linphone_call_get_remote_params(call);
+//
+//			if (linphone_call_params_video_enabled(current) && !linphone_call_params_video_enabled(remote)) {
+//				[self changeCurrentView:CallView.compositeViewDescription];
+//			}
 			break;
 		}
 		case LinphoneCallError: {
-			[self displayCallError:call message:message];
+            [self.currentController dismissViewControllerAnimated:true completion:^{}];
+//			[self displayCallError:call message:message];
 			break;
 		}
 		case LinphoneCallEnd: {
@@ -399,8 +400,8 @@ static RootViewManager *rootViewManagerInstance = nil;
                     
                 }];
 			} else {
-				linphone_call_resume((LinphoneCall *)calls->data);
-				[self changeCurrentView:CallView.compositeViewDescription];
+//				linphone_call_resume((LinphoneCall *)calls->data);
+//				[self changeCurrentView:CallView.compositeViewDescription];
 			}
 			break;
 		}
